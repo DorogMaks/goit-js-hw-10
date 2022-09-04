@@ -12,9 +12,45 @@ body {
   line-height: 1.5;
 }
 
+p,
+h1,
+h2 {
+  margin: 0;
+}
+
+ul {
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+}
+
 #search-box {
   font: inherit;
   padding: 8px;
   max-width: 320px;
   margin-bottom: 16px;
+}
+
+.list-item,
+.info-name {
+  display: flex;
+  align-items: center;
+}
+
+.info-name {
+  margin-bottom: 15px;
+}
+
+.list-item:not(:last-child),
+.info-item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.list-text,
+.info-title {
+  margin-left: 10px;
+}
+
+.info-text span {
+  font-weight: 700;
 }

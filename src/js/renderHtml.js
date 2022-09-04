@@ -5,14 +5,15 @@ export function renderList(countries) {
   const markup = countries
     .map(({ flags, name }) => {
       return `
-    <li>
+    <li class="list-item">
         <img
             src="${flags.svg}"
             alt="Flag of ${name.official}"
+            class="list-image"
             width="30"
             height="20"
         />
-        <p>${name.official}</p>
+        <p class="list-text">${name.common}</p>
     </li>
       `;
     })
@@ -24,24 +25,31 @@ export function renderInfo(countries) {
   const markup = countries
     .map(({ name, capital, population, flags, languages }) => {
       return `
-        <img
-            src="${flags.svg}"
-            alt="Flag of ${name.official}"
-            width="30"
-            height="20"
-        />
-        <h2 class="">${name.official}</h2>
-        <ul class="">
-            <li class="">
-            <p class=""><span class="">Capital</span>: ${capital}</p>
+        <div class="info-name">
+            <img
+                src="${flags.svg}"
+                alt="Flag of ${name.official}"
+                class="info-image"
+                width="60"
+                height="40"
+            />
+            <h2 class="info-title">${name.official}</h2>
+        </div>
+        <ul class="info-list">
+            <li class="info-item">
+                <p class="info-text">
+                  <span>Capital</span>: ${capital}
+                </p>
             </li>
-            <li class="">
-            <p class=""><span class="">Population</span>: ${population}</p>
+            <li class="info-item">
+                <p class="info-text">
+                  <span>Population</span>: ${population}
+                </p>
             </li>
-            <li class="">
-            <p class=""><span class="">Languages</span>: ${Object.values(
-              languages
-            )}</p>
+            <li class="info-item">
+                <p class="info-text">
+                  <span>Languages</span>: ${Object.values(languages)}
+                </p>
             </li>
         </ul>
         `;
