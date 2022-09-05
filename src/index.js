@@ -42,5 +42,8 @@ function onFetchSuccess(data) {
 }
 
 function onFetchError() {
+  clearList();
+  clearInfo();
+
   Notify.failure('Oops, there is no country with that name');
 }
